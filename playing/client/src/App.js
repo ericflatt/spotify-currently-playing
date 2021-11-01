@@ -14,7 +14,7 @@ class App extends Component {
     }
     this.state = {
       loggedIn: token ? true : false,
-      nowPlaying: { name: 'Not Checked', albumArt: '' }
+      nowPlaying: { name: 'Not Checked', albumArt: '', artists: '' }
     }
   }
   getHashParams() {
@@ -35,6 +35,7 @@ class App extends Component {
         this.setState({
           nowPlaying: { 
               name: response.item.name,
+              artist: response.item.artists,
               albumArt: response.item.album.images[0].url
             }
         });
